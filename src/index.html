@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>project</title>{% for (var css in o.htmlWebpackPlugin.files.css) { %}
     <link href="{%=o.htmlWebpackPlugin.files.css[css] %}" rel="stylesheet">{% } %}
+    <link rel="stylesheet" src="https://normalize-css.googlecode.com/svn/trunk/normalize.css" />
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,200,700|Lato:400,300' rel='stylesheet' type='text/css'>
   </head>
   <body>
     <app></app>{% for (var chunk in o.htmlWebpackPlugin.files.chunks) { %}
