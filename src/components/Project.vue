@@ -30,6 +30,7 @@ export default {
     display: inline-block;
     position: relative;
     cursor: pointer;
+    text-align: center;
   }
 
   .project a {
@@ -42,6 +43,7 @@ export default {
   }
 
   .project .overlay {
+    text-align: center;
     color: #fff;
     position: absolute;
     background-color: rgba(0,0,0,.8);

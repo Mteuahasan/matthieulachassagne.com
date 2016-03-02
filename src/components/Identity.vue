@@ -1,7 +1,7 @@
 <template>
   <div class="identity">
     <h1>Matthieu Lachassagne</h1>
-    <h2>full-stack padawan</h2>
+    <span><a href="mailto:hello@matthieulachassagne.com">Get in touch</a></span><h2>full-stack padawan</h2><span><a href="http://github.com/mteuahasan">Github</a></span>
     <p>I <span>❤</span> {{ skill }}</p>
   </div>
 </template>
@@ -60,12 +60,22 @@ export default {
     text-align: center;
     font-weight: lighter;
     font-size: 1.5em;
+    display: inline-block;
+    padding: 0 20px;
   }
   .identity {
     height: 50%;
     position: fixed;
     left: 0;right: 0;
     padding-top: 50px;
+    text-align: center;
+  }
+
+  .identity a {
+    color: #000;
+    text-decoration: none;
+    position: relative;
+    bottom: 2px;
   }
 
   .identity p {
