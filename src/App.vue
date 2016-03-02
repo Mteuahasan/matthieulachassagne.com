@@ -1,18 +1,28 @@
 <template>
   <div id="app">
     <identity></identity>
-    <slider></slider>
+    <projects :show="show"></projects>
   </div>
 </template>
 
 <script>
 import Identity from './components/Identity'
-import Slider from './components/Slider'
+import Projects from './components/Projects'
 
 export default {
   components: {
     Identity,
-    Slider
+    Projects
+  },
+  data () {
+    return {
+      show: false
+    }
+  },
+  events: {
+    'toggle-overlay': function (show) {
+      this.show = show
+    }
   }
 }
 </script>

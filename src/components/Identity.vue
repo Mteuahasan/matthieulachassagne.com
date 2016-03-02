@@ -21,20 +21,25 @@ export default {
     let length = longest.length
     let base = 200
     let time = 200 * length + 1000
-    this.interval = setInterval(() => {
+    let self = this
+    self.interval = setInterval(() => {
       let j = 0
-      this.skill = ''
-      this.secondInterval = setInterval(() => {
-        this.skill += this.skills[i][j]
+      self.skill = ''
+      self.secondInterval = setInterval(() => {
+        self.skill += self.skills[i][j]
         j++
-        if (j === this.skills[i].length) {
+        if (j === self.skills[i].length) {
           j = 0
-          clearInterval(this.secondInterval)
+          clearInterval(self.secondInterval)
         }
       }, base)
       i++
-      if (i === this.skills.length) i = 0
+      if (i === self.skills.length) i = 0
     }, time)
+    window.addEventListener('blur', function () {
+      console.log('nope')
+      clearInterval(self.interval)
+    }, false)
   },
   beforeDestroy () {
     clearInterval(this.interval)
@@ -67,6 +72,13 @@ export default {
     font-size: 2em;
     text-align: center;
     padding-top: 90px;
+  }
+
+  @media screen and (max-width: 620px) {
+    .identity p {
+      font-size: 1.5em;
+      padding-top: 0px;
+    }
   }
 
   .identity p span {
